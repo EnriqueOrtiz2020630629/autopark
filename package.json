@@ -4,7 +4,7 @@
   "description": "",
   "main": "servidor.js",
   "scripts": {
-    "start": "cd client/frontend && npm install && npm run build && cd ../.. && node servidor.js",
+    "start": "cd client/frontend && npm install && npm run build && cd ../.. && npm install && node servidor.js",
     "dev": "nodemon servidor.js"
   },
   "author": "",
