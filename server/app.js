@@ -2,7 +2,12 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const mongoDb = require('./db-conn');
+const mongoose = require("mongoose");
+
+mongoose
+    .connect(process.env.mongoURL)
+    .then(() => console.log("Se conecto a la base de datos exitosamente"))
+    .catch(console.error);
 
 const app = express();
 
