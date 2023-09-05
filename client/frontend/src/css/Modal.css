@@ -1,0 +1,91 @@
+.modal {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+.modal input[type="text"]{
+  width: 90%;
+}
+
+.modal p {
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #337ab7;
+  color: white;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn--alt {
+  background-color: #eaeaea;
+  color: #333;
+}
+
+.btn:hover,
+.btn--alt:hover {
+  opacity: 0.8;
+}
+
+/* Estilos adicionales para el modal de confirmación */
+.modal.confirmacion {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.modal.confirmacion p {
+  margin-bottom: 10px;
+}
+
+.modal.confirmacion .btn {
+  margin-top: 20px;
+}
+
+/* Estilos adicionales para el modal de ticket */
+.modal.ticket {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.modal.ticket p {
+  margin-bottom: 10px;
+}
+
+.modal.ticket .ticket-label {
+  font-weight: bold;
+}
+
+.modal.ticket .ticket-value {
+  margin-bottom: 15px;
+}
+
+.modal.ticket .btn {
+  margin-top: 20px;
+}
+
+.modal.ticket .btn:hover {
+  opacity: 0.8;
+}

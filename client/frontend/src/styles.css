@@ -1,0 +1,303 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    height: 90vh;
+    padding: 0 0px; /* Agregar espacio de 10px a los lados */
+  }
+  
+
+
+  .contenedorFormulario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 200px;
+  }
+
+  .contenedorReporte{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 200px;
+  }
+
+  .contenedorReport{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+  }
+
+  
+  .contenedorBitacora{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 200px;
+  }
+
+  .contenedorBit{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+  }
+
+
+  .contenedorFormRe{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+  }
+  .contenedorFormRe .contenedorForm{
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%;
+  }
+  
+  form{
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 60%;
+  }
+   form{
+    background-color: #fff;
+    margin-top: 10px;
+   }
+  .contenedorForm,  .imagenInicio {
+    border-radius: 8px;
+    width: 65%;
+    height: 80%;
+  }
+  
+
+  h2 {
+    color: #2a623d;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #2a623d;
+  }
+  
+  input[type="email"],input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  p.error-message {
+    color: #ff0000;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  input[type="submit"], button {
+    display: block;
+    width: 50%;
+    padding: 5px;
+    background-color: #2a623d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+
+  table {
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+  
+  p.signup-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #2a623d;
+  }
+  
+  button.signup-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2a623d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .error input[type="email"],
+  .error input[type="password"] {
+    border-color: #ff0000;
+  }
+
+
+  .contenedor-menu {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a columna */
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 30px;
+  }
+  
+  
+  .menu {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    text-align: center;
+    align-items: center; /* Alineación vertical de los elementos */
+  }
+  
+  .menu button {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    margin: 0;
+    position: relative;
+  }
+  
+  .menu button::before,
+  .menu button::after {
+    content: "";
+    display: block;
+    padding-top: 90%;
+  }
+  
+  .menu button::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .menu button::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+
+  
+  .botonMenu  {
+    background-color: #2a623d;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 90%;
+    height: 90%;
+  }
+
+  .pisos{
+    background-image: url(../img/piso.jpg);
+  }
+  .reporte{
+    background-image: url(../img/reporteFinanciero.jpg);
+}
+.piso{
+    background-image: url(../img/niveles.jpg);
+}
+
+.bitacora{
+    background-image: url(../img/bitacora.jpg);
+}
+
+.usuario{
+    background-image: url(../img/usuario.jpg);
+}
+.cerrar{
+    background-image: url(../img/cerrar.jpg);
+}
+
+/* Estilo para el elemento <p> con la clase "menu-parrafo" */
+.menu-parrafo {
+
+    /* Establece el color de fondo como transparente */
+    background-color: transparent;
+    /* Define el color de la letra como negro */
+    color: black;
+    /* Establece el tamaño de la letra en 18 píxeles */
+    font-size: 30px;
+    /* Hace que el texto sea negrita */
+    font-weight: bold;
+  }
+  
+  
+  .imagenInicio {
+    background-image: url(../img/LOGOP.png);
+    background-size: cover;
+    background-position: center;
+    height: 63%;
+    margin-left: 230px;
+  }
+  
+  
+  
+  
+  @media (max-width: 780px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-items: center; /* Centra los elementos horizontalmente */
+        align-items: center; /* Centra los elementos verticalmente */
+      }
+      
+  .imagenInicio{
+    width: 73%;
+    margin-bottom: 5px;
+  }
+  .imagenInicio, .contenedorFormulario{
+    margin: 0px;
+  }
+}
+
+input {
+  padding: 1px;
+  margin: 4px;
+}
+
+input[type="date"] {
+  padding: 1px;
+  margin: 10px;
+}
+
+
+  
+  

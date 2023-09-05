@@ -1,0 +1,8 @@
+/node_modules/
+/client/frontend/node_modules/
+/client/frontend/build/
+logs/
+*.log
+.log.*
+package-lock.json
+nodemon.json
