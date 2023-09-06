@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use(express.static('./client/frontend/build'));
+app.use('/static', express.static('./client/frontend/build/static'));
 
 app.get('/', (req, res) => {
     res.sendFile('index.html', {root: __dirname + './client/frontend/build'});
@@ -33,7 +34,7 @@ app.get('/', (req, res) => {
 app.use('/pisos', pisosRutas);
 app.use('/registrar-entrada', registrarEntradaRutas);
 app.use('/registrar-salida', registrarSalidaRutas);
-app.use('/', adminRutas);
+app.use('/api', adminRutas);
 app.use('/bitacora', bitacoraRutas);
 app.use('/reporte-financiero', reporteFinancieroRutas);
 
@@ -87,7 +88,7 @@ app.get('/bitacora', (req, res, next) => {
     });
 })
 
-app.use((next) => {
+app.use((req, res, next) => {
     const error = new Error('No encontrado');
     error.status = 404;
     next(error);

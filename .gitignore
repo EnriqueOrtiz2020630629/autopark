@@ -6,3 +6,5 @@ logs/
 .log.*
 package-lock.json
 nodemon.json
+.gcloudignore
+app.yaml
