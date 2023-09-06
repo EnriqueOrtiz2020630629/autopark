@@ -25,68 +25,18 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use(express.static('./client/frontend/build'));
-app.use('/static', express.static('./client/frontend/build/static'));
+/*app.use('/static', express.static('./client/frontend/build/static'));
 
 app.get('/', (req, res) => {
     res.sendFile('index.html', {root: __dirname + './client/frontend/build'});
-});
+});*/
 
-app.use('/pisos', pisosRutas);
-app.use('/registrar-entrada', registrarEntradaRutas);
-app.use('/registrar-salida', registrarSalidaRutas);
+app.use('/api/pisos', pisosRutas);
+app.use('/api/registrar-entrada', registrarEntradaRutas);
+app.use('/api/registrar-salida', registrarSalidaRutas);
 app.use('/api', adminRutas);
-app.use('/bitacora', bitacoraRutas);
-app.use('/reporte-financiero', reporteFinancieroRutas);
-
-
-app.get('/reporte-diario', (req, res, next) => {
-    const salidas  = eventos.filter(evento => evento.tipo === "SALIDA").filter(evento => evento.timeStamp.toDateString === Date.now().toDateString());    
-    let ganancias = 0;
-    let numCarros = 0;
-    salidas.forEach(evento => {
-        ganancias+=evento.especial;
-        numCarros += 1;
-    });
-
-    const reporte = {
-        fecha: Date.now().toISOString().substring(0, 10),
-        ganancias: ganancias,
-        numCarros: numCarros
-    }
-
-    res.status(200).json({
-        reporte: reporte
-    });
-});
-
-app.get('/reporte-mensual', (req, res, next) => {
-    const salidas  = eventos.filter(evento => evento.timeStamp === Date.now().getMonth() && evento.timeStamp.getFullYear() === Date.now().getFullYear());    
-    let ganancias = 0;
-    let numCarros = 0;
-    salidas.forEach(evento => {
-        ganancias+=evento.especial;
-        numCarros += 1;
-    });
-
-    const reporte = {
-        fecha: Date.now().toISOString().substring(0, 10),
-        ganancias: ganancias,
-        numCarros: numCarros
-    }
-    
-    res.status(200).json({
-        reporte: reporte
-    });
-});
-
-
-app.get('/bitacora', (req, res, next) => {
-    const eventos  = eventos.filter(evento => evento.timeStamp.toDateString === Date.now().toDateString);
-    
-    res.status(200).json({
-        reporte: reporte
-    });
-})
+app.use('/api/bitacora', bitacoraRutas);
+app.use('/api/reporte-financiero', reporteFinancieroRutas);
 
 app.use((req, res, next) => {
     const error = new Error('No encontrado');
