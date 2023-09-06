@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './css/Modal.css';
 import { SesionContexto } from "./SesionContexto";
-import configData from './configData.json';
 
 export default function ModalSalida(props){
     const navigate = useNavigate();
@@ -19,7 +18,7 @@ export default function ModalSalida(props){
         const peticion = {
             token: contexto.token,
         }
-        fetch(configData.API_URL+'/registrar-salida/'+pisoId, {
+        fetch('/api/registrar-salida/'+pisoId, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

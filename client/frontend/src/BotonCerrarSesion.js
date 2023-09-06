@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { SesionContexto } from "./SesionContexto";
 import "./css/styles.css";
-import configData from '../configData.json';
 
 
 export default function BotonCerrarSesion(){
@@ -14,7 +13,7 @@ export default function BotonCerrarSesion(){
             token: contexto.token
         }
 
-        fetch(configData.API_URL+'/cerrar-sesion', {
+        fetch('/api/cerrar-sesion', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

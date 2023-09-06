@@ -21,6 +21,9 @@
     color: white;
     border: 1px solid #800040;
     margin: 0 1rem;
+    display: flex;
+  justify-content: center;
+  align-items: center;
   }
   
   .btn:hover {

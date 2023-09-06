@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import Backdrop from "./Backdrop";
 import ModalEncargado from "./ModalEncargado";
 import { SesionContexto } from "./SesionContexto";
-import configData from "./configData.json";
 
 export default function AgregarEncargado() {
     const contexto = useContext(SesionContexto);
@@ -45,7 +44,7 @@ export default function AgregarEncargado() {
             password: password,
             token: contexto.token
           };
-          fetch(configData.API_URL+'/registrar-encargado', {
+          fetch('/api/registrar-encargado', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

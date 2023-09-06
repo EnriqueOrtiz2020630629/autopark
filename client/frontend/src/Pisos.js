@@ -3,7 +3,6 @@ import { SesionContexto } from "./SesionContexto";
 import ModalEntrada from './ModalEntrada';
 import Backdrop from "./Backdrop";
 import ModalSalida from './ModalSalida';
-import configData from './configData.json';
 
 export default function Pisos() {
     const [pisos, setPisos] = useState([]);
@@ -18,7 +17,7 @@ export default function Pisos() {
         const peticion = {
             token: contexto.token,
         };
-        fetch(configData.API_URL+'/pisos/', {
+        fetch('/api/pisos/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -44,7 +43,7 @@ export default function Pisos() {
     }
 
     const mensajeSinPisos = (
-        <div>
+        <div >
             <h2>No tienes ningun piso registrado.</h2>
         </div>
     )
@@ -71,7 +70,7 @@ export default function Pisos() {
         <div className="contenedorNiveles">
           <h1 className="titulo">Pisos del Estacionamiento</h1>
           <div className="contenedorPrincipal">
-            {pisos ? displayPisos : mensajeSinPisos}
+            {pisos.length > 0 ? displayPisos : mensajeSinPisos}
           </div>
           {modalEntrada && <ModalEntrada pisoId={modalEntrada} />}
           {modalEntrada && <Backdrop />}

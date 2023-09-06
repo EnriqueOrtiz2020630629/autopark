@@ -1,6 +1,5 @@
 import { useContext, useState, useEffect } from "react";
 import { SesionContexto } from "./SesionContexto";
-import configData from "./configData.json";
 
 export default function ReporteFinanciero() {
     const contexto = useContext(SesionContexto);
@@ -18,7 +17,7 @@ export default function ReporteFinanciero() {
                 token: contexto.token,
                 tipo: tipoReporte,
             };
-            fetch(configData.API_URL + "/reporte-financiero/" + fecha, {
+            fetch("/api/reporte-financiero/" + fecha, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

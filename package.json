@@ -1,12 +1,13 @@
 {
   "name": "autopark",
   "version": "1.0.0",
-  "description": "",
+  "description": "sistema gestor de estacionamientos",
   "main": "servidor.js",
   "scripts": {
     "start": "node servidor.js",
     "dev": "nodemon servidor.js"
   },
+
   "author": "",
   "license": "ISC",
   "dependencies": {

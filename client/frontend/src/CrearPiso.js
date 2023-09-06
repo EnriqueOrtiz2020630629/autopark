@@ -3,7 +3,6 @@ import { useNavigate,  } from "react-router-dom";
 import { SesionContexto } from "./SesionContexto";
 import Modal from './Modal';
 import Backdrop from "./Backdrop";
-import configData from './configData.json';
 
 export default function CrearPiso() {
     const navigate = useNavigate();
@@ -29,7 +28,7 @@ export default function CrearPiso() {
             token: contexto.token
         };
         
-        fetch(configData.API_URL+'/pisos/crear', {
+        fetch('/api/pisos/crear', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

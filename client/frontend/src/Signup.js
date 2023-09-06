@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Backdrop from "./Backdrop";
 import ModalSignup from "./ModalSignup";
-import configData from './configData.json';
 
 export default function Signup() {
     const navigate = useNavigate();
@@ -44,7 +43,7 @@ export default function Signup() {
             correo: correo,
             password: password
           };
-          fetch(configData.API_URL+'/signup', {
+          fetch('/api/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -64,8 +63,8 @@ export default function Signup() {
     }
 
   return (
-    <div class="contenedorFormRe">
-      <form class="contenedorForm" onSubmit={enviar}>
+    <div className="contenedorFormRe">
+      <form className="contenedorForm" onSubmit={enviar}>
         <h2>Crear cuenta</h2>
 
         <div>

@@ -1,6 +1,5 @@
 import { useContext, useState, useEffect } from "react"
 import { SesionContexto } from "./SesionContexto";
-import configData from './configData.json';
 
 export default function Bitacora(){
     const [fecha, setFecha] = useState('');
@@ -12,7 +11,7 @@ export default function Bitacora(){
             const peticion = {
                 token: contexto.token,
             };
-            fetch(configData.API_URL+'/bitacora/'+fecha, {
+            fetch('/api/bitacora/'+fecha, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
